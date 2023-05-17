@@ -16,7 +16,7 @@ export default function Home() {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: COLORS.lightwhite,
+        backgroundColor: COLORS.lightWhite,
       }}
     >
       <Stack.Screen
