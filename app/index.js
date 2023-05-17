@@ -32,6 +32,19 @@ export default function Home() {
           headerTitle: "",
         }}
       />
+
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View
+          style={{
+            flex: 1,
+            padding: SIZES.medium,
+          }}
+        >
+          <Welcome />
+          <Popularjobs />
+          <Nearbyjobs />
+        </View>
+      </ScrollView>
     </SafeAreaView>
     // <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
     //   {/* Use the `Screen` component to configure the layout. */}
