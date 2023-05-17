@@ -1,58 +1,43 @@
-import { StyleSheet, Text, ScrollView, SafeAreaView } from "react-native";
-import { Stack, useRouter } from "expo-router";
 import { useState } from "react";
+import { View, ScrollView, SafeAreaView } from "react-native";
+import { Link, Stack, useRouter } from "expo-router";
 
-import { COLORS, icons, images, SIZES } from "../constants/";
+import { COLORS, icons, images, SIZES } from "../constants";
 import {
   Nearbyjobs,
   Popularjobs,
   ScreenHeaderBtn,
   Welcome,
-} from "../constants";
+} from "../components";
 
-const Home = () => {
-  const Home = useRouter();
-
+export default function Home() {
+  const router = useRouter();
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: COLORS.lightwhite,
+      }}
+    >
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: COLORS.lightWhite },
+          headerStyle: { backgroundColor: COLORS.lightwhite },
           headerShadowVisible: false,
-          headerLeft: () => {
-            <ScreenHeaderBtn iconUrl={icons.menu} dimensions='60%' />;
-          },
-          headerRight: () => {
-            <ScreenHeaderBtn iconUrl={icons.profile} dimensions='100%' />;
-          },
-          Title: "Hello",
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension='60%' />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn iconUrl={icons.profile} dimension='100%' />
+          ),
+          headerTitle: "",
         }}
       />
-      <Text style={styles.title}>Home Page</Text>
     </SafeAreaView>
+    // <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    //   {/* Use the `Screen` component to configure the layout. */}
+    //   <Stack.Screen options={{ title: "Overview" }} />
+    //   {/* Use the `Link` component to enable optimized client-side routing. */}
+    //   <Link href='/details'>Go to Details</Link>
+    // </View>
   );
-};
-
-export default Home;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    padding: 24,
-  },
-  main: {
-    flex: 1,
-    justifyContent: "center",
-    maxWidth: 960,
-    marginHorizontal: "auto",
-  },
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
-  },
-});
+}
