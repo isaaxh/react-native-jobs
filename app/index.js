@@ -1,15 +1,39 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, ScrollView, SafeAreaView } from "react-native";
+import { Stack, useRouter } from "expo-router";
+import { useState } from "react";
 
-export default function Page() {
+import { COLORS, icons, images, SIZES } from "../constants/";
+import {
+  Nearbyjobs,
+  Popularjobs,
+  ScreenHeaderBtn,
+  Welcome,
+} from "../constants";
+
+const Home = () => {
+  const Home = useRouter();
+
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World!</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
-      </View>
-    </View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: COLORS.lightWhite },
+          headerShadowVisible: false,
+          headerLeft: () => {
+            <ScreenHeaderBtn iconUrl={icons.menu} dimensions='60%' />;
+          },
+          headerRight: () => {
+            <ScreenHeaderBtn iconUrl={icons.profile} dimensions='100%' />;
+          },
+          Title: "Hello",
+        }}
+      />
+      <Text style={styles.title}>Home Page</Text>
+    </SafeAreaView>
   );
-}
+};
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
