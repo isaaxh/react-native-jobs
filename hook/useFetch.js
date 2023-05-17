@@ -51,3 +51,5 @@ const useFetch = (endpoint, query) => {
     refetch,
   };
 };
+
+export default useFetch;
