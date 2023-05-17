@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -21,6 +21,10 @@ const Popularjobs = () => {
     query: "React developer",
     num_pages: 1,
   });
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     <View style={styles.container}>
