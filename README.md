@@ -1,5 +1,11 @@
 # React Native Jobs
 
+## Tech Used:
+
+- React Native Expo
+- Vanilla JavaScript
+- Axios for api calls 
+
 ## 🚀 How to use
 Run the following commands to get started:
 
